@@ -3,12 +3,12 @@ declare global {
     funcName: string;
     funcAbi: any[];
     funcArg?: any[];
+    contractAddress?: string;
   };
 
   type writeTxProps = {
     txArg: {
       from?: string;
-      to?: string;
       gasLimit?: number;
       maxPriorityFeePerGas?: number;
       maxFeePerGas?: number;

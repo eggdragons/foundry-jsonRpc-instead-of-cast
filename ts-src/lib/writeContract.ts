@@ -14,6 +14,7 @@ export const writeContract = async ({
   funcName,
   funcAbi,
   funcArg,
+  contractAddress,
   txArg,
 }: writeTxProps) => {
   const provider = new ethers.JsonRpcProvider(PROVIDER_URL);
@@ -33,7 +34,7 @@ export const writeContract = async ({
   const transactionData = {
     type: 2,
     from: txArg.from ?? walletAddress,
-    to: txArg.to ?? CONTRACT_ADDRESS,
+    to: contractAddress ?? CONTRACT_ADDRESS,
     gasLimit: txArg.gasLimit ?? GAS_LIMIT,
     maxPriorityFeePerGas: ethers.parseUnits(
       String(txArg.maxPriorityFeePerGas ?? MAX_PRIORITY_FEE_PER_GAS),

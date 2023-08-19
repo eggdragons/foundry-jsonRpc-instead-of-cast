@@ -5,6 +5,7 @@ export const readContract = async ({
   funcName,
   funcAbi,
   funcArg,
+  contractAddress,
 }: ReadTxProps) => {
   const abi = funcAbi;
   const iface = new ethers.Interface(abi);
@@ -13,7 +14,7 @@ export const readContract = async ({
     : iface.encodeFunctionData(funcName);
 
   const transactionData = {
-    to: CONTRACT_ADDRESS,
+    to: contractAddress ?? CONTRACT_ADDRESS,
     data: data,
   };
 

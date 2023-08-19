@@ -8,7 +8,8 @@
     "start": "forge script script/Counter.s.sol:CounterScript --fork-url http://localhost:8545 --broadcast -vvvv",
     "get": "npx ts-node --files ts-src/getNumber.ts",
     "increment": "npx ts-node --files ts-src/postIncrement.ts",
-    "set": "npx ts-node --files ts-src/postSetNumber.ts"
+    "set": "npx ts-node --files ts-src/postSetNumber.ts",
+    "multi": "npx ts-node --files ts-src/postMultiFunction.ts"
   },
   "author": "eggdragon"
 }
